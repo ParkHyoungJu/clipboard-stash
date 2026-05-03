@@ -2,9 +2,12 @@
 name = "clipboard-stash"
 version = "0.1.0"
 description = "Clipboard Stash — Win+V를 정면 대체하는 Tauri Windows 클립보드 매니저"
-authors = ["ToolFunHub"]
+authors = ["ToolFunHub <qkrgudwn78@gmail.com>"]
 edition = "2021"
 rust-version = "1.77"
+license = "MIT"
+repository = "https://github.com/ParkHyoungJu/clipboard-stash"
+homepage = "https://github.com/ParkHyoungJu/clipboard-stash"
 
 # 빌드 산출물 한 개 (lib + bin) 권장
 [lib]

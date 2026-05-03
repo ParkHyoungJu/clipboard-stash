@@ -4,6 +4,13 @@
   "private": true,
   "type": "module",
   "description": "Win+V를 정면 대체하는 Tauri Windows 클립보드 매니저",
+  "license": "MIT",
+  "author": "ToolFunHub (ParkHyoungJu)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ParkHyoungJu/clipboard-stash.git"
+  },
+  "homepage": "https://github.com/ParkHyoungJu/clipboard-stash",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
