@@ -1,0 +1,73 @@
+/* ===========================================================================
+   ToolFunHub 디자인 시스템 — 표준 토큰 (모든 도구 공통)
+   ⚠️ 이 :root 토큰 값은 절대 변경하지 말 것.
+      도구별 추가 토큰만 아래에 append (--clipboard-stash-*).
+   =========================================================================== */
+
+:root {
+  /* Brand */
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+  --primary-soft: #eef2ff;
+
+  /* Surface (light) */
+  --bg: #ffffff;
+  --surface: #f8fafc;
+  --surface-2: #f1f5f9;
+  --border: #e2e8f0;
+  --card: #ffffff;
+
+  /* Text */
+  --text: #0f172a;
+  --text-muted: #64748b;
+
+  /* Status */
+  --success: #10b981;
+  --danger: #ef4444;
+  --warn: #f59e0b;
+  --accent: #8b5cf6;
+
+  /* Geometry */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  /* Shadow */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  /* Type */
+  --font-sans:
+    "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+    system-ui, "Segoe UI", "Inter", sans-serif;
+  --font-mono:
+    ui-monospace, "SF Mono", "JetBrains Mono", Consolas, Menlo, monospace;
+
+  /* === clipboard-stash 도구 고유 토큰 === */
+  --clipboard-stash-pin: #f59e0b;
+  --clipboard-stash-pin-soft: rgba(245, 158, 11, 0.12);
+  --clipboard-stash-mask: #94a3b8;
+  --clipboard-stash-highlight: rgba(99, 102, 241, 0.18);
+  --clipboard-stash-row-hover: rgba(99, 102, 241, 0.06);
+  --clipboard-stash-tag-bg: var(--primary-soft);
+  --clipboard-stash-tag-fg: var(--primary-dark);
+}
+
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --surface-2: #334155;
+  --border: #334155;
+  --card: #1e293b;
+  --text: #f1f5f9;
+  --text-muted: #94a3b8;
+  --primary-soft: #1e1b4b;
+
+  --clipboard-stash-pin: #fbbf24;
+  --clipboard-stash-pin-soft: rgba(251, 191, 36, 0.18);
+  --clipboard-stash-mask: #64748b;
+  --clipboard-stash-highlight: rgba(165, 180, 252, 0.22);
+  --clipboard-stash-row-hover: rgba(99, 102, 241, 0.12);
+  --clipboard-stash-tag-bg: #312e81;
+  --clipboard-stash-tag-fg: #c7d2fe;
+}

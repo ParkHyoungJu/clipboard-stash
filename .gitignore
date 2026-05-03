@@ -1,0 +1,23 @@
+# Node
+node_modules/
+dist/
+
+# Rust / Tauri
+src-tauri/target/
+src-tauri/Cargo.lock
+
+# Tauri 빌드 산출물 (Release에 별도 업로드)
+release-assets/
+
+# 임시
+*.log
+.DS_Store
+Thumbs.db
+
+# 아이콘 소스 (icons/ 자동 생성됨)
+icon-source.png
+
+# editor
+.vscode/
+.idea/
+*.swp

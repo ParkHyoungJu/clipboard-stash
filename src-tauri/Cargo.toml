@@ -1,0 +1,45 @@
+[package]
+name = "clipboard-stash"
+version = "0.1.0"
+description = "Clipboard Stash — Win+V를 정면 대체하는 Tauri Windows 클립보드 매니저"
+authors = ["ToolFunHub"]
+edition = "2021"
+rust-version = "1.77"
+
+# 빌드 산출물 한 개 (lib + bin) 권장
+[lib]
+name = "clipboard_stash_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.0", features = [] }
+
+[dependencies]
+tauri = { version = "2.0", features = ["tray-icon", "image-png"] }
+tauri-plugin-global-shortcut = "2.0"
+tauri-plugin-sql = { version = "2.0", features = ["sqlite"] }
+tauri-plugin-clipboard-manager = "2.0"
+
+# 클립보드 직접 폴링 (텍스트/이미지/파일경로)
+arboard = "3.4"
+
+# 자동 붙여넣기 (Ctrl+V 시뮬레이션)
+enigo = "0.2"
+
+# SQLite 직접 접근 (FTS5 인덱스용 — Phase 2 강화)
+rusqlite = { version = "0.31", features = ["bundled"] }
+
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+chrono = { version = "0.4", features = ["serde"] }
+anyhow = "1.0"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+[features]
+# default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]
+
+# Windows-only — SendInput 직접 호출 (PowerShell 우회로 즉시 자동 붙여넣기)
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.59", features = ["Win32_UI_Input_KeyboardAndMouse"] }

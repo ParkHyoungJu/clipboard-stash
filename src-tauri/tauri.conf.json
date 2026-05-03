@@ -1,0 +1,66 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Clipboard Stash",
+  "version": "0.1.0",
+  "identifier": "com.toolfunhub.clipboard-stash",
+  "build": {
+    "frontendDist": "../dist",
+    "devUrl": "http://localhost:5173",
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build"
+  },
+  "app": {
+    "withGlobalTauri": false,
+    "windows": [
+      {
+        "title": "Clipboard Stash",
+        "width": 720,
+        "height": 540,
+        "minWidth": 360,
+        "minHeight": 320,
+        "resizable": true,
+        "decorations": true,
+        "transparent": false,
+        "center": true,
+        "skipTaskbar": false,
+        "alwaysOnTop": false,
+        "visible": true
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["msi", "nsis"],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "resources": [],
+    "copyright": "© 2026 ToolFunHub",
+    "category": "Productivity",
+    "shortDescription": "Win+V 대체 클립보드 매니저",
+    "longDescription": "무제한 클립보드 히스토리, 글로벌 핫키 검색, 정규식·태그·핀고정, 스니펫 변수 치환, 자동 마스킹.",
+    "windows": {
+      "wix": {},
+      "nsis": {
+        "installerIcon": "icons/icon.ico",
+        "installMode": "perMachine",
+        "languages": ["Korean", "English"]
+      }
+    }
+  },
+  "plugins": {
+    "globalShortcut": {
+      "all": true
+    },
+    "sql": {
+      "preload": ["sqlite:clipboard-stash.db"]
+    }
+  }
+}
